@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="sp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="app.js" type="module"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1>Propiedades</h1>
+        <p>Elija el Campus</p>
+        <select v-model="elija">Elija
+            <option value="1">Bucaramanga</option>
+            <option>Bogota</option>
+            <option>Medellin</option>
+            <option>Mexico</option>
+        </select>
+
+        <form>
+            <input @click.prevent="mostrar = !mostrar" type="submit">
+            <div v-show="mostrar" >
+       </form>
+
+        <div >
+            <h2>Profesores</h2>
+            <form>
+                <label>Nombre</label>
+                <input type="text" id="Nombre" v-model="Nombre" required>
+
+                <label>Telefono</label>
+                <input type="number" id="Telefono" v-model="Telefono" required>
+
+                <label>Teams</label>
+                <input type="time" id="Teams" v-model="Teams" required>
+
+                <label>Email</label>
+                <input type="text" v-model="Email" required>
+
+                <input @click.prevent="processInput" type="submit" value="Enviar">
+                <div>
+                    <ul>
+                        <li v-for="(person, index) in Datos">
+                            {{person.Nombre}}
+                        </li>
+                        <li v-for="(person, index) in Datos">
+                            {{person.Telefono}}
+                        </li>
+                        <li v-for="(person, index) in Datos">
+                            {{person.Teams}}
+                        </li>
+                        <li v-for="(person, index) in Datos">
+                            {{person.Email}}
+                        </li>
+                    </ul>
+                </div>
+        </div>
+        </form>
+        <!-- ---------------------------------------------------------------------------------------------------------- -->
+
+        <h2>Estudiantes</h2>
+        <form>
+            <label>Nombre</label>
+            <input type="text" id="Nombre" v-model="Nombre2" required>
+
+            <label>Telefono</label>
+            <input type="number" id="Telefono" v-model="Telefono2" required>
+
+            <label>Teams</label>
+            <input type="time" id="Telefono" v-model="Teams2" required>
+
+            <label>Email</label>
+            <input type="text" id="Email" v-model="Email2" required>
+
+            <label>Barrio</label>
+            <input type="text" id="Barrio" v-model="Barrio2" required>
+
+            <label>Transporte</label>
+            <input type="text" id="Transporte" v-model="Transporte2" required>
+
+            <label>Nivel Academico</label>
+            <input type="text" id="NivelA" v-model="NivelA" required>
+
+            <input @click.prevent="processInput2" type="submit" value="Enviar">
+            <div>
+                <ul v-for="(person, index) in Datos2">
+                    <li>
+                        {{person.Nombre}}
+                    </li>
+                    <li>
+                        {{person.Telefono}}
+                    </li>
+                    <li>
+                        {{person.Teams}}
+                    </li>
+                    <li>
+                        {{person.Email}}
+                    </li>
+                    <li>
+                        {{person.Barrio}}
+                    </li>
+                    <li>{{person.Transporte}}</li>
+                </ul>
+            </div>
+        </form>
+
+
+    </div>
+
+</body>
+
+</html>

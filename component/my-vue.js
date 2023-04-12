@@ -51,8 +51,5 @@ export default {
                this.Transporte2 ='',
                this.NivelA = ''
           },
-          // elija(){
-          //      document.getElementById('elija')
-          // }
      }
 }
